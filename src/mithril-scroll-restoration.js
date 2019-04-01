@@ -1,5 +1,3 @@
-import m from "mithril";
-
 //  ES Module vs CommonJS?
 
 // https://github.com/ludbek/mithril-componentx
@@ -10,6 +8,8 @@ import m from "mithril";
 // const hasHistorySupport = () => {
 //     return !!(window.history && window.history.pushState);
 // }
+
+import m from "mithril";
 
 const setScrollTop = (scrollTop) => document.documentElement.scrollTop = scrollTop;
 
@@ -62,7 +62,7 @@ export const initScrollRestoration = () => {
     });
 };
 
-const ScrollRestoration = () => {
+export const ScrollRestoration = () => {
     let currentRoute = "";
 
     const scrollTo = (scrollTop) => {

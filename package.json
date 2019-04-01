@@ -14,12 +14,14 @@
         "pdehne"
     ],
     "scripts": {
-        "build": "webpack --env.NODE_ENV=production",
-        "build:dev": "webpack --env.NODE_ENV=development",
+        "start": "webpack-dev-server"
     },
     "devDependencies": {
         "@babel/core": "^7.4.0",
-        "webpack": "^4.29.6"
+        "babel-loader": "^8.0.5",
+        "webpack": "^4.29.6",
+        "webpack-cli": "^3.3.0",
+        "webpack-dev-server": "^3.2.1"
     },
     "dependencies": {
         "mithril": "^2.0.0-rc.4"
