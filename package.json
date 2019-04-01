@@ -1,0 +1,27 @@
+{
+    "name": "@pdehne/mithril-scroll-restoration",
+    "version": "0.1.0",
+    "description": "Scroll restoration for MithrilJS",
+    "license": "MIT",
+    "repository": "pdehne/mithril-scroll-restoration",
+    "main": "index.js",
+    "keywords": [
+        "mithril",
+        "scroll",
+        "restoration",
+        "npm",
+        "package",
+        "pdehne"
+    ],
+    "scripts": {
+        "build": "webpack --env.NODE_ENV=production",
+        "build:dev": "webpack --env.NODE_ENV=development",
+    },
+    "devDependencies": {
+        "@babel/core": "^7.4.0",
+        "webpack": "^4.29.6"
+    },
+    "dependencies": {
+        "mithril": "^2.0.0-rc.4"
+    }
+}
