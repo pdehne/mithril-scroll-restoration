@@ -1,14 +1,3 @@
-//  ES Module vs CommonJS?
-
-// https://github.com/ludbek/mithril-componentx
-// https://github.com/isiahmeadows/mithril-helpers
-
-// https://diveintohtml5.info/detect.html
-// https://diveintohtml5.info/everything.html
-// const hasHistorySupport = () => {
-//     return !!(window.history && window.history.pushState);
-// }
-
 import m from "mithril";
 
 const setScrollTop = (scrollTop) => document.documentElement.scrollTop = scrollTop;
@@ -32,8 +21,6 @@ const saveScrollTop = (scrollTop) => {
     }
 
     saveScrollTopTimer = setTimeout((scrollTopValue) => {
-        console.log("ScrollRestoration.saveScrollTop", m.route.get(), scrollTopValue);
-
         m.route.set(m.route.get(), null, { replace: true, state: { scrollTop: scrollTopValue } });
     }, 250, scrollTop);
 }
@@ -87,8 +74,6 @@ export const ScrollRestoration = () => {
     const restoreScrollPosition = () => {
         if (currentRoute !== m.route.get()) {
             const scrollTop = history.state ? history.state.scrollTop : 0;
-
-            console.log("ScrollRestoration.restoreScrollPosition", currentRoute, m.route.get(), scrollTop, getScrollTopMax());
 
             if (scrollTo(scrollTop))
                 currentRoute = m.route.get();
