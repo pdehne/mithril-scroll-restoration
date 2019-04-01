@@ -1,10 +1,10 @@
 {
     "name": "@pdehne/mithril-scroll-restoration",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Scroll restoration for MithrilJS",
     "license": "MIT",
     "repository": "pdehne/mithril-scroll-restoration",
-    "main": "index.js",
+    "main": "src/mithril-scroll-restoration.js",
     "keywords": [
         "mithril",
         "scroll",

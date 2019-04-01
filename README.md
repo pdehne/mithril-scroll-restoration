@@ -13,7 +13,7 @@ $ npm install @pdehne/mithril-scroll-restoration
 In your top level JavaScript file import mithril-scroll-restoration and initialize it:
 
 ```
-import { initScrollRestoration, ScrollRestoration } from "./src/mithril-scroll-restoration";
+import { initScrollRestoration, ScrollRestoration } from "@pdehne/mithril-scroll-restoration";
 ...
 initScrollRestoration();
 m.route(document.body, "/", Routes);
