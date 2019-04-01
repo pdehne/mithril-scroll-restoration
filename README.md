@@ -1,16 +1,16 @@
 # mithril-scroll-restoration
 
-Scroll restoration handling for MithrilJS.
+Scroll restoration for MithrilJS.
 
 ## Integration
 
-Please install the npm package:
+Install the npm package:
 
 ```
 $ npm install @pdehne/mithril-scroll-restoration
 ```
 
-Then, in your top level JavaScript file, import mithril-scroll-restoration and initialize it:
+In your top level JavaScript file import mithril-scroll-restoration and initialize it:
 
 ```
 import { initScrollRestoration, ScrollRestoration } from "./src/mithril-scroll-restoration";
@@ -19,7 +19,7 @@ initScrollRestoration();
 m.route(document.body, "/", Routes);
 ```
 
-Finally wrap your top level component in the provided ScrollRestoration component, for example:
+Wrap your top level component in the provided ScrollRestoration component, for example:
 
 ```
 const Layout = {
