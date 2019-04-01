@@ -8,10 +8,7 @@
     "keywords": [
         "mithril",
         "scroll",
-        "restoration",
-        "npm",
-        "package",
-        "pdehne"
+        "restoration"
     ],
     "scripts": {
         "start": "webpack-dev-server"
