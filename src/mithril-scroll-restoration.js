@@ -1,12 +1,22 @@
 import m from "mithril";
 
-const setScrollTop = (scrollTop) => document.documentElement.scrollTop = scrollTop;
+// Cross browser get / set of scrollTop / scrollTopMax
 
-const getScrollTop = () => document.documentElement.scrollTop || document.body.scrollTop;
+const elementToScroll = document.scrollingElement || document.documentElement || document.body;
 
-const getScrollTopMax = document.scrollingElement.scrollTopMax != null
-    ? () => document.scrollingElement.scrollTopMax
-    : () => (document.scrollingElement.scrollHeight - document.documentElement.clientHeight)
+const elementForClientHeight = document.documentElement || document.body;
+
+const setScrollTop = (scrollTop) => {
+    elementToScroll.scrollTop = scrollTop;
+}
+
+const getScrollTop = () => {
+    return elementToScroll.scrollTop;
+}
+
+const getScrollTopMax = elementToScroll.scrollTopMax != null
+    ? () => elementToScroll.scrollTopMax
+    : () => (elementToScroll.scrollHeight - elementForClientHeight.clientHeight)
 
 // Save the scroll position of the current page in its browser history state.
 // Debounce, to make sure this is only done once, after scrolling
@@ -21,12 +31,12 @@ const saveScrollTop = (scrollTop) => {
     }
 
     saveScrollTopTimer = setTimeout((scrollTopValue) => {
-        m.route.set(m.route.get(), null, { replace: true, state: { scrollTop: scrollTopValue } });
+        history.replaceState({ scrollTop: scrollTopValue }, null);
     }, 250, scrollTop);
 }
 
 export const initScrollRestoration = () => {
-    // Disable browser scroll restoration. This is available since Chrome 46
+    // Disable browser scroll restoration.
     // Otherwise the browser will try to restore the scroll position as well, which
     // results in the page jumping around on route changes
     // Also see https://developers.google.com/web/updates/2015/09/history-api-scroll-restoration
@@ -69,7 +79,7 @@ export const ScrollRestoration = () => {
         setScrollTop(scrollTopValue);
     
         return true;
-    }    
+    }
 
     const restoreScrollPosition = () => {
         if (currentRoute !== m.route.get()) {
