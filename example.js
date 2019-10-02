@@ -46,6 +46,6 @@ const Routes = {
   "/": { render: vnode => m(Layout, m(Home)) }
 }
 
-initScrollRestoration();
+initScrollRestoration(m);
 
 m.route(document.body, "/", Routes);

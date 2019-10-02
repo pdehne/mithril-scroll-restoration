@@ -15,7 +15,7 @@ In your top level JavaScript file import mithril-scroll-restoration and initiali
 ```
 import { initScrollRestoration, ScrollRestoration } from "@pdehne/mithril-scroll-restoration";
 ...
-initScrollRestoration();
+initScrollRestoration(m);
 m.route(document.body, "/", Routes);
 ```
 

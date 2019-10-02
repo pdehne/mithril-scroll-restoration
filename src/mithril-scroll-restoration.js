@@ -1,4 +1,6 @@
-import m from "mithril";
+// The mithril module for current route retrival
+
+let m = null;
 
 // Cross browser get / set of scrollTop / scrollTopMax
 
@@ -35,7 +37,9 @@ const saveScrollTop = (scrollTop) => {
     }, 250, scrollTop);
 }
 
-export const initScrollRestoration = () => {
+export const initScrollRestoration = (mithrilModule) => {
+    m = mithrilModule;
+
     // Disable browser scroll restoration.
     // Otherwise the browser will try to restore the scroll position as well, which
     // results in the page jumping around on route changes
