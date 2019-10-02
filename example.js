@@ -12,9 +12,8 @@ const createNav = () =>
   m("nav",
     [{ '/': 'Home' }, { '/a': 'A' }, { '/a/somekey': 'A/1' }, { '/b': 'B' }]
       .map(link =>
-        m('a', {
+        m(m.route.Link, {
           href: Object.keys(link),
-          oncreate: m.route.link
         }, Object.values(link))
       )
   )
